@@ -12,3 +12,6 @@ echo " a+b*c = $m"
 
 n="$(( $a * $b + $c ))"
 echo " a*b+c = $n"
+
+o="$(( $c + $a / $b ))"
+echo " c+a/b = $o"
