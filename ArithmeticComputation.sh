@@ -7,7 +7,7 @@ read b
 read c
 
 counter=0
-
+temp=0
 
 #aritmetic operation
 m="$(( $a + $b * $c ))"
@@ -42,3 +42,20 @@ done
 
 echo "Result in Array elements are : "
 echo ${array[@]}
+
+#sort array in descending order
+for (( i=1; i<$counter; i++ ))
+do
+   for (( j=0; j<$i; j++ ))
+   do
+      if [[ ${array[j]} -lt ${array[i]} ]]
+      then
+         temp=${array[j]}
+         array[j]=${array[i]}
+         array[i]=$temp
+      fi
+   done
+done
+echo "array after sorting in descending order is : "
+echo ${array[@]}
+echo ""
