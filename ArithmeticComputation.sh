@@ -31,3 +31,14 @@ result[$((counter++))]=$p
 
 #printing result in dictionary
 echo "Result of arithmetic operation in dictionary is : " ${result[@]}
+
+#to print result from dictionary to array
+declare -a  array
+
+for i in "${!result[@]}"
+do
+   array[$i]=${result[$i]}
+done
+
+echo "Result in Array elements are : "
+echo ${array[@]}
