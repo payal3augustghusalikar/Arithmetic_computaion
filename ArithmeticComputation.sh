@@ -6,6 +6,9 @@ read a
 read b
 read c
 
+counter=0
+
+
 #aritmetic operation
 m="$(( $a + $b * $c ))"
 echo " a+b*c = $m"
@@ -18,3 +21,13 @@ echo " c+a/b = $o"
 
 p="$(( $a % $b + $c ))"
 echo " a%b+c = $p"
+
+#to store result in dictionary
+
+result[$((counter++))]=$m
+result[$((counter++))]=$n
+result[$((counter++))]=$o
+result[$((counter++))]=$p
+
+#printing result in dictionary
+echo "Result of arithmetic operation in dictionary is : " ${result[@]}
